@@ -5,3 +5,14 @@ data/Systematic_review_oaks_genetics_genomics/
 doc/
 data/official/
 plots/
+
+# R specific files
+*.RData
+*.Rhistory
+.RData
+.Rhistory
+*.rds
+*.RDS
+
+# Large data files
+*.pdf
