@@ -1,0 +1,7 @@
+.DS_Store
+bin/*.Rproj
+.Rproj.user
+data/Systematic_review_oaks_genetics_genomics/
+doc/
+data/official/
+plots/
