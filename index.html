@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quercus — Visualizaciones interactivas</title>
+  <meta name="description" content="Visualizaciones interactivas para el póster de Quercus." />
+  <style>
+    :root{
+      --bg: #0b0c10; --fg:#e8f0fe; --muted:#9aa3b2;
+      --card:#14161b; --btn:#2b8a3e; --btn2:#2d6cdf; --btn3:#7c3aed;
+      --btn-txt:#fff; --shadow:0 10px 30px rgba(0,0,0,.25);
+      --radius:18px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f7f7fb; --fg:#111827; --muted:#6b7280; --card:#ffffff;
+             --btn:#22a06b; --btn2:#2563eb; --btn3:#7c3aed; --btn-txt:#ffffff;}
+    }
+    html,body{height:100%}
+    body{
+      margin:0; font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial;
+      background:var(--bg); color:var(--fg); display:grid; place-items:center; padding:24px;
+    }
+    .wrap{width:100%; max-width:900px; background:var(--card); border-radius:var(--radius);
+      box-shadow:var(--shadow); padding:28px 22px 20px;}
+    header{margin-bottom:8px}
+    .title{font-weight:700; font-size:1.35rem; line-height:1.2}
+    .subtitle{color:var(--muted); font-size:.95rem}
+    .grid{display:grid; gap:14px; margin-top:16px; grid-template-columns:repeat(1,1fr);}
+    @media (min-width:560px){ .grid{ grid-template-columns:repeat(2,1fr);} }
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.04));
+      border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:10px; min-height:160px;
+      border:1px solid rgba(255,255,255,.06);}
+    .card h3{margin:0 0 4px; font-size:1.05rem}
+    .card p{margin:0; color:var(--muted); font-size:.95rem}
+    .actions{margin-top:auto; display:flex; gap:10px; flex-wrap:wrap}
+    .btn{appearance:none; border:none; border-radius:12px; padding:10px 14px;
+      font-weight:600; text-decoration:none; background:var(--btn); color:var(--btn-txt);
+      display:inline-block; transition:transform .05s ease, filter .15s ease; box-shadow:var(--shadow);}
+    .btn:hover{filter:brightness(1.06)} .btn:active{transform:translateY(1px)}
+    .btn.alt{ background:var(--btn2);} .btn.purp{ background:var(--btn3);}
+    footer{margin-top:18px; color:var(--muted); font-size:.85rem; text-align:center}
+    .tag{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.1);
+         color:var(--fg); padding:6px 10px; border-radius:999px; font-size:.85rem}
+    .kpi{display:flex; gap:14px; flex-wrap:wrap; margin-top:6px}
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <header>
+      <div class="title">Quercus — Visualizaciones interactivas</div>
+      <div class="subtitle">Explora los gráficos desde tu teléfono escaneando el QR del póster o tocando un botón.</div>
+    </header>
+
+    <section class="grid" aria-label="Lista de visualizaciones">
+      <!-- Bubble plot -->
+      <article class="card">
+        <h3>Bubble plot — Todas las especies</h3>
+        <p>Distribución por categoría IUCN (X), hex count (Y), tamaño: ecoregion_count. Colores: only CN, only MX, only US, Other.</p>
+        <div class="kpi">
+          <span class="tag">IUCN vs Hex count</span><span class="tag">Interactivo</span>
+        </div>
+        <div class="actions">
+          <a class="btn alt" href="./docs/oak_all_species_bubble.html">Abrir gráfico</a>
+        </div>
+      </article>
+
+      <!-- Network -->
+      <article class="card">
+        <h3>Network visualization</h3>
+        <p>Visualización de red para explorar relaciones.</p>
+        <div class="kpi"><span class="tag">Network</span><span class="tag">Interactivo</span></div>
+        <div class="actions">
+          <a class="btn" href="./docs/network_visualization.html">Abrir gráfico</a>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <div>Este sitio no usa Jekyll. Recuerda incluir un archivo vacío <code>.nojekyll</code> en la raíz del repo.</div>
+    </footer>
+  </main>
+</body>
+</html>
